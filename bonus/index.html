@@ -19,16 +19,18 @@
                   <i class="fas fa-angle-left"></i>
               </div>
               <div class="images">
-                  <img :src="pic[indexPic]" alt="">
+                  <img :src="pics[indexPic]" alt="">
               </div>
               <div class="next" @click="nextPic">
                   <i class="fas fa-angle-right"></i>
               </div>
               <div class="nav">
-                <i class="fas fa-circle active first"></i>
-                <i class="fas fa-circle"></i>
-                <i class="fas fa-circle"></i>
-                <i class="fas fa-circle last"></i>
+                <!-- v-for mi fa un ciclo di elementi con un proprio indice tanti quanti sono gli elementi in pics -->
+                <!-- :class CONDIZIONE: indexpallino e indexpic sono uguali?  se si allora do classe active, se no non faccio nulla- serve per dare classe active al pallino quando cambio l'immagine  -->
+                <i v-for="(item, indexPallino) in pics"
+                :class="indexPallino == indexPic ? 'active': ''"
+                class="fas fa-dot-circle"
+                @click="cambiaImmagine(indexPallino)"></i>
               </div>
           </div>
       </div>

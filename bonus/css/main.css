@@ -48,6 +48,9 @@
 }
 .nav > i {
     margin: 0 20px;
+    cursor: pointer;
+    color: white;
+    
 }
 .nav > i.active {
     color: blue;
